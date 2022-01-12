@@ -1,8 +1,18 @@
 # require_relative "./app"
 
-feature "test" do
-  scenario "it show Testing infrastructure working!" do
+# feature "test" do
+#   scenario "it show Testing infrastructure working!" do
+#     visit("/")
+#     expect(page).to have_content "Testing infrastructure working!"
+#   end
+# end
+
+feature "names" do
+  scenario "expect players to fill in their names" do
     visit("/")
-    expect(page).to have_content "Testing infrastructure working!"
+    fill_in('first_name', with: 'John')
+    fill_in('second_name', with: 'Tom')
+    click_button('Save')
+    expect(page).to have_content "John vs Tom" 
   end
 end

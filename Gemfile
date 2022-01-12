@@ -7,5 +7,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem "rspec"
 gem "sinatra"
 gem "capybara"
+gem "sinatra-contrib"
+gem "puma"
+gem "thin"
+gem "falcon"
+gem "webrick"
 
 # gem "rails"
