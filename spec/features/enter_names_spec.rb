@@ -14,7 +14,7 @@ feature "names" do
     fill_in('second_name', with: 'Tom')
     click_button('Save')
 
-    # save_and_open_page
+    save_and_open_page
 
     expect(page).to have_content "John vs Tom" 
   end
