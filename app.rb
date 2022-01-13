@@ -26,11 +26,12 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  get "/attack" do
+    @player1 = session[:first_name]
+    @player2 = session[:second_name]
+    erb :attack
+  end
+
 
   run! if app_file == $0
 end
-
-
-# Write a get '/play route that renders the play.erb view you already wrote
-# In the get '/play' route, extract the instance variables required by the view from the session
-# Remove the erb :play expression from the post '/names' route, and replace it with a redirect to the '/play' route

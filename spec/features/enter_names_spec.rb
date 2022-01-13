@@ -9,12 +9,9 @@
 
 feature "names" do
   scenario "expect players to fill in their names" do
-    visit("/")
-    fill_in('first_name', with: 'John')
-    fill_in('second_name', with: 'Tom')
-    click_button('Save')
+    sign_in_and_play 
 
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content "John vs Tom" 
   end
